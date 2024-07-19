@@ -3,10 +3,10 @@
   "builds": [
    
     {
-      "src": "check.py",
+      "src": "manage.py",
       "use": "@vercel/python",
       "config": {
-        "buildCommand": "python check.py"
+        "buildCommand": "./build.sh"
       }
     }
     
