@@ -10,12 +10,12 @@ PYTHON_VERSION="python3.9"
 $PYTHON_VERSION -m venv venv
 
 # Activate the virtual environment
-source venv/Scripts/activate
+source venv/bin/activate
 
 # Upgrade pip
 pip install --upgrade pip
 
 # Install dependencies from requirements.txt
-pip install -r requirements.txt
+pip install -r requirements.txt || { echo 'Failed to install dependencies'; exit 1; }
 
 python3.9 manage.py collectstatic
