@@ -5,16 +5,11 @@
       "src": "manage.py",
       "use": "@vercel/python",
       "config": {
-        "buildCommand": "pip install -r requirements.txt"
-      }
-    },
-    {
-      "src": "build_files.sh",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "staticfiles_build"
+        "buildCommand": "bash build_files.sh"
       }
     }
+   
+    
   ],
   "routes": [
     {
