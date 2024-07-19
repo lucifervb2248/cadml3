@@ -7,10 +7,10 @@ set -e
 PYTHON_VERSION="python3.9"
 
 # Create a virtual environment
-$PYTHON_VERSION -m venv venv
+
 
 # Activate the virtual environment
-source venv/bin/activate
+source venv/Scripts/activate
 
 # Upgrade pip
 pip install --upgrade pip
