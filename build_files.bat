@@ -7,5 +7,9 @@ npm install -g vercel
 # Deploy with force to bypass cache
 vercel --force
 # Ensure the script exits if any command fails
+# Install dependencies
+pip install -r requirements.txt
+
+# Any additional build steps
 
 python3.9 manage.py collectstatic
