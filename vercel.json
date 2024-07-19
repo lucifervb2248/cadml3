@@ -1,6 +1,13 @@
 {
   "version": 2,
   "builds": [
+     {
+      "src": "manage.py",
+      "use": "@vercel/python",
+      "config": {
+        "buildCommand": "pip install -r requirements.txt"
+      }
+    },
    
     {
       "src": "manage.py",
@@ -9,6 +16,7 @@
         "buildCommand": "./build.sh"
       }
     }
+   
     
   ],
   "routes": [
