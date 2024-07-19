@@ -1,0 +1,121 @@
+{%load static%}
+<html>
+    <head>
+        <title>Welcome to your heart care</title>
+      
+        <link rel="stylesheet" href='{% static 'style3.css' %}' type="text/css">
+        <link rel="icon" href='{% static 'heart.png' %}'>
+    </head>
+    <body>
+        <!--We get the input from the clinicians -->
+        <center><h1 style="color:ghostwhite">Fill in the Details</h1></center>
+        <div class="banner">
+        <div class="navbar">
+            <ul>
+                <li><a href="{%url 'mainpage'%}">Home Page</a></li>
+            </ul>
+        </div>
+        <div class="text">
+        </div>
+        </div>
+        <div class="loginbox">
+            <img src="{% static 'heartlogo1.png '  %}"class="avatar">
+            <h1>For Clinicians</h1>
+            <meta charset="utf-8">
+            {% if message %}
+            <p style="color: red;">{{ message }}</p>
+            {% endif %} 
+            <form  method="post" id="myForm" accept-charset="utf-8" id="myForm" action="{% url 'clinicianResult' %}">
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+                <meta charset="utf-8">
+                {% csrf_token %}
+
+                <p>Age</p>
+                <input type="number" name="Age" placeholder="Enter Age">
+
+                <label>Gender
+        
+                <select id="gender" name="Sex">
+                    <option>Select</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select></label><br><br>
+
+                <label>Chest Pain Type
+                <select  name="ChestPainType" id="pain type">
+                    <option>Select</option>
+                    <option value="TA" >Typical Angina</option>
+                    <option value="NAP" >Non Anginal pain</option>
+                    <option value="ATA">Atypical Angina</option>
+                    <option value="ASY">Asymptotic Angina</option>
+                </select></label><br><br>
+
+                <label>Slope
+                <select name="ST_Slope" id="slope">
+                    <option>Select</option>
+                    <option value="Up">Up</option>
+                    <option value="Flat">Flat</option>
+                    <option value="Middle">Middle</option>
+                </select></label><br><br>
+
+                <label>Is Fasting Blood Sugar over 120?
+                <select name="FastingBS" id="bs">
+                    <option>Select</option>
+                    <option value="Y">Yes</option>
+                    <option value="N" >No</option>
+                    
+                </select></label><br><br>
+
+                <label>Resting ECG
+                <select name="RestingECG" id="ECG">
+                    <option>Select</option>
+                    <option value="Normal">Normal</option>
+                    <option value="ST">ST</option>
+                    <option value="LVH">LVH</option>
+                </select>
+                </label><br><br>
+
+                <label>Excercise induced angina
+                <select name="ExerciseAngina" id="angina">
+                    <option>Select</option>
+                    <option value="Y">Yes</option>
+                    <option value="N">No</option>
+                    </select></label><br><br>
+
+                <p>Total Cholestrol</p>
+                <input type="number" name="Cholesterol" placeholder="Enter Total Cholestrol">
+                
+                <p>Diastolic Blood Pressure</p>
+                <input type="number" name="RestingBP" placeholder="Enter Diastolic Blood Pressure">
+                
+                        
+                
+                    
+                <p>Maximum Heart Rate</p>
+                <input type="number" name="MaxHR" placeholder="Enter Heart Rate">
+                    
+                        
+                
+                
+                        
+                
+                    
+                <p>Oldpeak</p>
+                <input type="number" step="0.01" name="Oldpeak" placeholder="Enter oldpeak value">
+
+                <button style="background-color:turquoise" type="submit" value="Get Predictions">Get Predictions</button><span></span>
+                
+            </form>
+            <script>
+                document.getElementById('myForm').onsubmit = function() {
+                    return confirm('Are you sure you want to submit?');
+                };
+            </script>
+            <div class="content">
+                
+    
+            </div>
+    
+        </div>
+    </body>
+</html>

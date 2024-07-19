@@ -1,0 +1,35 @@
+{%load static%}
+<html>
+    <head>
+        <title>Welcome to your heart care</title>
+        <link rel="stylesheet" href='{% static 'style1.css' %}' type="text/css">
+        <link rel="icon" href='{% static 'heart.png' %}'>
+    </head>
+<!--This is the home page of the CDSS-->>
+    <body id="banner" id="text">
+        <div class="banner">
+        <div class="navbar">
+        <div class="text">
+        <img src="{% static 'heartlogo1.png '  %}" class="logo" width="140px" height="100px">
+        </div>
+        </div>
+        </div>
+        <div class="content">
+            <div class="text"><h2 style="color:darkgoldenrod;"><b>Coronary Artery Disease Risk Predictor & Life Style Priscriptor</b></h2></div>
+            <br>Your One Stop Website to evaluate & identify the risk of falling into Coronary Artery Disease(CAD) and provide prescrptive analytics to suggest personalized life style modifications!!</p>
+
+            <p>Please select your option</p>
+            
+
+            <a href="{%url 'clientpage'%}">
+                <button type="button"><span></span>For Public</button>
+            </a>
+            <a href="{%url 'clinicianpage'%}">
+                <button type="button"><span></span>For Clinicians</button>
+            </a>
+ 
+        </div>
+    
+    </body>
+
+    </html>

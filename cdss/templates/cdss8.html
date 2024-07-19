@@ -1,0 +1,39 @@
+{%load static%}
+<html>
+    <head>
+        <title>Welcome to your heart care</title>
+        <link rel="stylesheet" href='{% static 'style5.css' %}' type="text/css">
+        <link rel="icon" href='{% static 'heart.png' %}'>
+    </head>
+    <body>
+        <div class="navbar">
+            <ul>
+                <li><a href="{%url 'mainpage'%}">Home Page</a></li>
+            </ul>
+        </div>
+        <!--THis shows the life style predictions for values entered by clinician-->
+        <div class="text">
+            
+            <h2 style="color:darkgoldenrod; display: block;">Life Style Predictions</h2>
+                <ul style="color:aqua;">
+                    {% for item in  data %}
+                        <li>{{ item }}</li>
+                    {% empty %}
+                        <li>You can continue with your lifestyle.</li>
+                    {% endfor %}
+                </ul>
+           
+            
+                
+            </div>         
+        
+            <br>
+            
+            <br>
+            <h2 style="color: azure;">{{res}}</h2>
+            <br>
+         
+
+    </body>
+
+    </html>

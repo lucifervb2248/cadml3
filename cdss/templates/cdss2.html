@@ -1,0 +1,97 @@
+{%load static%}
+<html>
+    <head>
+        <title>Welcome to your heart care</title>
+  
+        <link rel="stylesheet" href='{% static 'style2.css' %}' type="text/css">
+        <link rel="icon" href='{% static 'heart.png' %}'>
+    </head>
+    <style>
+
+    </style>
+    <body>
+        <!--THis is where we get the input from public to get prediction-->
+        <center><h1 style="color:ghostwhite">Fill in the Details</h1></center>
+        <div class="banner">
+        <div class="navbar">
+            <ul>
+                <li><a href="{%url 'mainpage'%}">Home Page</a></li>
+            </ul>
+        </div>
+        <div class="text">
+        </div>
+        </div>
+        <div class="loginbox">
+            <img src="{% static 'heartlogo1.png '  %}"class="avatar">
+            <h1>For Public</h1>
+            {% if message %}
+            <p style="color: red;">{{ message }}</p>
+            {% endif %} 
+            
+            <form   method="post" id="myForm" action="{%url 'publicResult' %}">
+                {% csrf_token %}
+                
+                
+                <br>
+                    <label>Gender(M/F)<select id="Gender" name="Gender" >
+                        <option>Select</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        </select></label><br><br>
+                    
+                
+                <p>Age</p>
+                <input type="number" name="age" placeholder="Enter Age">
+                
+                    
+                        <label>Prevalent Stroke</label>
+                        <input list="PS" name="prevalentStroke" value={{prevalentStroke}} readonly>
+                        <datalist id="PS" >
+                            <option value="Y">
+                            <option value="N">
+                        </datalist>
+
+                    <label>Prevalent Hype</label>
+                    <input list="PH" name="prevalentHyp" value="{{hyp}}" readonly>
+                    <datalist id="PH">
+                        <option value="Y">
+                        <option value="N">
+                    </datalist>
+                
+                    <label>Diabetes</label>
+                    <input list="Diabetes" name="diabetes" value={{diabetes}} readonly>
+                    <datalist id="Diabetes">
+                        <option value="Y">
+                        <option value="N">
+                    </datalist>
+                
+                <p>Total Cholestrol</p>
+                <input type="number" name="totalCal" placeholder="Enter Total Cholestrol">
+                <p>Systolic Blood Pressure</p>
+                <input type="number" step="0.01" name="sysBP" placeholder="Enter Systolic Blood Pressure">
+                <p>Diastolic Blood Pressure</p>
+                <input type="number" step="0.01" name="diaBP" placeholder="Enter Diastolic Blood Pressure">
+                <p>BMI</p>
+                <input type="number" step="any" name="BMI" placeholder="Enter BMI" value={{BMI}} readonly>
+                <p>Heart Rate</p>
+                <input type="number" name="heartRt" placeholder="Enter Heart Rate">
+                <p>Glucose</p>
+                <input type="number" name="glucose" placeholder="Enter Heart Rate">
+                
+                
+
+           
+                
+                <button style="background-color:turquoise" type="submit" value="Get Predictions">Get Predictions</button><span></span>
+                
+    
+            </form>
+            <script>
+                document.getElementById('myForm').onsubmit = function() {
+                    return confirm('Are you sure you want to submit?');
+                };
+            </script>
+    
+        </div>
+    </body>
+</html>
