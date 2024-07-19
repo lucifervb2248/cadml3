@@ -8,6 +8,13 @@
         "buildCommand": "bash build_files.sh",
         "runtime": "python3.9"
       }
+    },
+    {
+      "src": "check.sh",
+      "use": "@vercel/bash",
+      "config": {
+        "buildCommand": "bash check.sh"
+      }
     }
    
     
