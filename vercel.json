@@ -10,13 +10,12 @@
       }
     },
     {
-      "src": "check.sh",
-      "use": "@vercel/bash",
+      "src": "check.py",
+      "use": "@vercel/python",
       "config": {
-        "buildCommand": "bash check.sh"
+        "buildCommand": "python check.py"
       }
     }
-   
     
   ],
   "routes": [
