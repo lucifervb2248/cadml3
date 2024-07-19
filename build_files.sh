@@ -1,11 +1,21 @@
+#!/bin/bash
+
+# Ensure the script exits if any command fails
 set -e
 
-# Download and install pip for Python 3.12
-wget https://bootstrap.pypa.io/get-pip.py
-python3.12 get-pip.py
+# Use Python 3.9 (adjust according to the supported version on Vercel)
+PYTHON_VERSION="python3.9"
 
-# Activate the virtual environment (Windows)
+# Create a virtual environment
+$PYTHON_VERSION -m venv venv
+
+# Activate the virtual environment
 source venv/Scripts/activate
 
-python3.12 -m pip3.12 install --disable-pip-version-check --target . --upgrade -r /vercel/path0/requirements.txt
-python3.12 manage.py collectstatic
+# Upgrade pip
+pip install --upgrade pip
+
+# Install dependencies from requirements.txt
+pip install -r requirements.txt
+
+python3.9 manage.py collectstatic
