@@ -1,14 +1,7 @@
 {
   "version": 2,
   "builds": [
-    {
-      "src": "manage.py",
-      "use": "@vercel/python",
-      "config": {
-        "buildCommand": "bash build_files.sh",
-        "runtime": "python3.9"
-      }
-    },
+   
     {
       "src": "check.py",
       "use": "@vercel/python",
