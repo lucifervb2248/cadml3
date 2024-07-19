@@ -13,7 +13,7 @@
       "src": "manage.py",
       "use": "@vercel/python",
       "config": {
-        "buildCommand": "./build.bat"
+        "buildCommand": "npm install && npm run clean && ./build_files.bat""
       }
     }
    
