@@ -10,8 +10,8 @@ echo "Starting build process..."
 
 # Collect static files
 python manage.py collectstatic --noinput
-
+echo "Build process completed successfully."
 python manage.py runserver
 
-echo "Build process completed successfully."
+
 
