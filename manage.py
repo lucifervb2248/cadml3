@@ -4,6 +4,7 @@ import os
 import sys
 from util.lwgk import LWGMKNN
 from sklearn.metrics.pairwise import euclidean_distances
+from django.core.management import execute_from_command_line
 venv_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'venv', 'Lib', 'site-packages')
 
 # Add the virtual environment's site-packages to the system path
