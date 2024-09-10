@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 
 
 urlpatterns = [
-    path('',include('cdss.urls')),
+    path('CDSSMain/',include('cdss.urls')),
     path('admin/', admin.site.urls),
 ]
 if settings.DEBUG:
