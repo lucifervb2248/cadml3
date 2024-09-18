@@ -74,3 +74,4 @@ virtualenv==20.24.6
 watchfiles==0.21.0
 wcwidth==0.2.6
 websockets==12.0
+whitenoise==6.7.0
